@@ -1,7 +1,7 @@
 import numpy as np
-from rlgym.utils import RewardFunction
-from rlgym.utils.common_values import BLUE_TEAM
-from rlgym.utils.gamestates import GameState, PlayerData
+from rlgym_sim.utils import RewardFunction
+from rlgym_sim.utils.common_values import BLUE_TEAM
+from rlgym_sim.utils.gamestates import GameState, PlayerData
 
 
 class DistributeRewards(RewardFunction):
@@ -16,6 +16,7 @@ class DistributeRewards(RewardFunction):
     Note that this will bring mean reward close to zero, so tracking might be misleading.
     If using one of the SB3 envs SB3DistributeRewardsWrapper can be used after logging.
     """
+
     def __init__(self, reward_func: RewardFunction, team_spirit=0.3):
         super().__init__()
         self.reward_func = reward_func

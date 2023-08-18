@@ -3,9 +3,9 @@ from typing import Union
 
 import numpy as np
 
-from rlgym.utils import RewardFunction
-from rlgym.utils.gamestates import PlayerData, GameState
-from rlgym.utils.reward_functions.common_rewards import ConstantReward
+from rlgym_sim.utils import RewardFunction
+from rlgym_sim.utils.gamestates import PlayerData, GameState
+from rlgym_sim.utils.reward_functions.common_rewards import ConstantReward
 
 
 class _DummyReward(RewardFunction):

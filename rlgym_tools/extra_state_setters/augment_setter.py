@@ -4,9 +4,9 @@ from random import getrandbits, shuffle
 from typing import List
 
 import numpy as np
-from rlgym.utils.state_setters.state_setter import StateSetter
-from rlgym.utils.state_setters.wrappers import CarWrapper
-from rlgym.utils.state_setters.wrappers import StateWrapper
+from rlgym_sim.utils.state_setters.state_setter import StateSetter
+from rlgym_sim.utils.state_setters.wrappers import CarWrapper
+from rlgym_sim.utils.state_setters.wrappers import StateWrapper
 
 PI = math.pi
 

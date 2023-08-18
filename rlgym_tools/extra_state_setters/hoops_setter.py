@@ -1,6 +1,6 @@
-from rlgym.utils.state_setters import StateSetter
-from rlgym.utils.state_setters import StateWrapper
-from rlgym.utils.common_values import BALL_RADIUS, CEILING_Z, BLUE_TEAM, ORANGE_TEAM
+from rlgym_sim.utils.state_setters import StateSetter
+from rlgym_sim.utils.state_setters import StateWrapper
+from rlgym_sim.utils.common_values import BALL_RADIUS, CEILING_Z, BLUE_TEAM, ORANGE_TEAM
 import numpy as np
 from numpy import random as rand
 
@@ -142,7 +142,7 @@ class HoopsLikeSetter(StateSetter):
                 car.set_lin_vel(x=0, y=0, z=0)
                 orange_done = True
             else:
-                car.set_pos(rand.uniform(-4096,4096)),rand.uniform(0,-1**(car.team_num-1)*5120,17)
+                car.set_pos(rand.uniform(-4096, 4096)), rand.uniform(0, -1**(car.team_num-1)*5120, 17)
 
                 car.boost = rand.uniform(0.2, 1)
 

@@ -1,6 +1,6 @@
 import numpy as np
-from rlgym.utils import RewardFunction
-from rlgym.utils.gamestates import PlayerData, GameState
+from rlgym_sim.utils import RewardFunction
+from rlgym_sim.utils.gamestates import PlayerData, GameState
 
 
 class DiffReward(RewardFunction):
@@ -8,6 +8,7 @@ class DiffReward(RewardFunction):
     Calculates difference in reward between time steps
     For instance, it can be used to reward acceleration by measuring change in velocity.
     """
+
     def __init__(self, reward_function: RewardFunction, negative_slope=1.):
         super().__init__()
         self.reward_function = reward_function

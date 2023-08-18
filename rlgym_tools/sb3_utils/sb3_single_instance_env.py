@@ -5,7 +5,7 @@ import numpy as np
 from stable_baselines3.common.vec_env import VecEnv
 from stable_baselines3.common.vec_env.base_vec_env import VecEnvIndices, VecEnvStepReturn, VecEnvObs
 
-from rlgym.gym import Gym
+from rlgym_sim.gym import Gym
 
 
 class SB3SingleInstanceEnv(VecEnv):
@@ -72,5 +72,3 @@ class SB3SingleInstanceEnv(VecEnv):
 
     def get_images(self) -> Sequence[np.ndarray]:
         pass
-
-

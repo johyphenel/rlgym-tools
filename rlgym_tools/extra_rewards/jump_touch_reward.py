@@ -1,5 +1,6 @@
-from rlgym.utils import RewardFunction
-from rlgym.utils.gamestates import PlayerData, GameState
+from rlgym_sim.utils import RewardFunction
+from rlgym_sim.utils.gamestates import PlayerData, GameState
+
 
 class JumpTouchReward(RewardFunction):
     """
@@ -16,7 +17,7 @@ class JumpTouchReward(RewardFunction):
 
     def get_reward(
             self, player: PlayerData, state: GameState, previous_action: np.ndarray
-            ) -> float:
+    ) -> float:
         if player.ball_touched and not player.on_ground and state.ball.position[2] >= self.min_height:
             return ((state.ball.position[2] - 92) ** self.exp)-1
 

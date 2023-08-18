@@ -3,9 +3,9 @@ import os
 from typing import Tuple, Optional, List
 
 import numpy as np
-from rlgym.utils import RewardFunction
-from rlgym.utils.gamestates import PlayerData, GameState
-from rlgym.utils.reward_functions import CombinedReward
+from rlgym_sim.utils import RewardFunction
+from rlgym_sim.utils.gamestates import PlayerData, GameState
+from rlgym_sim.utils.reward_functions import CombinedReward
 from stable_baselines3.common.callbacks import BaseCallback
 from stable_baselines3.common.logger import Logger
 

@@ -1,8 +1,8 @@
 from typing import List
 
 import numpy as np
-from rlgym.utils.gamestates import GameState, PlayerData
-from rlgym.utils.reward_functions import DefaultReward
+from rlgym_sim.utils.gamestates import GameState, PlayerData
+from rlgym_sim.utils.reward_functions import DefaultReward
 
 
 class MultiModelReward(DefaultReward):

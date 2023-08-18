@@ -12,9 +12,10 @@ from stable_baselines3.common.vec_env.base_vec_env import (
 )
 from stable_baselines3.common.vec_env.subproc_vec_env import _worker
 
-from rlgym.envs import Match
-from rlgym.gym import Gym
-from rlgym.gamelaunch import LaunchPreference
+from rlgym_sim.envs import Match
+from rlgym_sim.gym import Gym
+from rlgym_sim.gamelaunch import LaunchPreference
+
 
 class SB3MultipleInstanceEnv(SubprocVecEnv):
     """
@@ -142,7 +143,7 @@ class SB3MultipleInstanceEnv(SubprocVecEnv):
     def step_async(self, actions: np.ndarray) -> None:
         i = 0
         for remote, n_agents in zip(self.remotes, self.n_agents_per_env):
-            remote.send(("step", actions[i : i + n_agents]))
+            remote.send(("step", actions[i: i + n_agents]))
             i += n_agents
         self.waiting = True
 

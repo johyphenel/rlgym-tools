@@ -1,6 +1,6 @@
 import numpy as np
-from rlgym.utils import RewardFunction
-from rlgym.utils.gamestates import PlayerData, GameState
+from rlgym_sim.utils import RewardFunction
+from rlgym_sim.utils.gamestates import PlayerData, GameState
 
 
 class MultiplyRewards(RewardFunction):

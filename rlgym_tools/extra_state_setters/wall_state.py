@@ -1,12 +1,13 @@
-from rlgym.utils.state_setters import StateSetter
-from rlgym.utils.state_setters import StateWrapper
-from rlgym.utils.math import rand_vec3
+from rlgym_sim.utils.state_setters import StateSetter
+from rlgym_sim.utils.state_setters import StateWrapper
+from rlgym_sim.utils.math import rand_vec3
 import numpy as np
 from numpy import random as rand
 import random
 
 BALL_RADIUS = 94
 DEG_TO_RAD = 3.14159265 / 180
+
 
 class WallPracticeState(StateSetter):
 
@@ -44,7 +45,7 @@ class WallPracticeState(StateSetter):
         team_side = 0 if random.randrange(2) == 1 else 1
         team_inverter = 1 if team_side == 0 else -1
 
-        #if only 1 play, team is always 0
+        # if only 1 play, team is always 0
 
         ball_x_pos = 3000 * axis_inverter
         ball_y_pos = random.randrange(7600) - 3800
@@ -57,7 +58,7 @@ class WallPracticeState(StateSetter):
         state_wrapper.ball.set_lin_vel(ball_x_vel, ball_y_vel, ball_z_vel)
 
         chosen_car = [car for car in state_wrapper.cars if car.team_num == team_side][0]
-        #if randomly pick, chosen_car is from orange instead
+        # if randomly pick, chosen_car is from orange instead
 
         car_x_pos = 2500 * axis_inverter
         car_y_pos = ball_y_pos
@@ -93,7 +94,6 @@ class WallPracticeState(StateSetter):
             # change side
             side_inverter = -1
 
-
         # MAGIC NUMBERS ARE FROM MANUAL CALIBRATION AND WHAT FEELS RIGHT
 
         ball_x_pos = 3000 * side_inverter
@@ -108,7 +108,7 @@ class WallPracticeState(StateSetter):
 
         wall_car_blue = [car for car in state_wrapper.cars if car.team_num == 0][0]
 
-        #blue car setup
+        # blue car setup
         blue_pitch_rot = 0 * DEG_TO_RAD
         blue_yaw_rot = 90 * DEG_TO_RAD
         blue_roll_rot = 90 * side_inverter * DEG_TO_RAD
@@ -120,7 +120,7 @@ class WallPracticeState(StateSetter):
         wall_car_blue.set_pos(blue_x, blue_y, blue_z)
         wall_car_blue.boost = 100
 
-        #orange car setup
+        # orange car setup
         wall_car_orange = None
         if len(state_wrapper.cars) > 1:
             wall_car_orange = [car for car in state_wrapper.cars if car.team_num == 1][0]
@@ -180,7 +180,6 @@ class WallPracticeState(StateSetter):
         ball_y_vel = 0
         ball_z_vel = 550
         state_wrapper.ball.set_lin_vel(ball_x_vel, ball_y_vel, ball_z_vel)
-
 
         wall_car = [car for car in state_wrapper.cars if car.team_num == defense_team][0]
 

@@ -2,8 +2,8 @@ import random
 from typing import List, Union
 
 import numpy as np
-from rlgym.utils.state_setters import StateSetter
-from rlgym.utils.state_setters import StateWrapper
+from rlgym_sim.utils.state_setters import StateSetter
+from rlgym_sim.utils.state_setters import StateWrapper
 
 
 class ReplaySetter(StateSetter):
@@ -41,7 +41,7 @@ class ReplaySetter(StateSetter):
 
     @staticmethod
     def convert_replays(paths_to_each_replay: List[str], frame_skip: int = 150, verbose: int = 0, output_location=None):
-        from rlgym_tools.replay_converter import convert_replay
+        from rlgym_sim_tools.replay_converter import convert_replay
         states = []
         for replay in paths_to_each_replay:
             replay_iterator = convert_replay(replay)

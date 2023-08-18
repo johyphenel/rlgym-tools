@@ -1,10 +1,11 @@
 from ray.rllib.algorithms.apex_dqn import ApexDQNConfig
 from test_marl_env import RLLibEnv
 from ray.tune import register_env
-from rlgym_tools.extra_action_parsers.lookup_act import LookupAction
+from rlgym_sim_tools.extra_action_parsers.lookup_act import LookupAction
+
 
 def make_env():
-    import rlgym
+    import rlgym_sim
     team_size = 1
     self_play = True
     n_agents = team_size*2 if self_play else team_size

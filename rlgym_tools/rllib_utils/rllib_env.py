@@ -2,7 +2,8 @@ from typing import Tuple
 from ray.rllib import MultiAgentEnv
 from ray.rllib.utils import override
 from ray.rllib.utils.typing import MultiAgentDict
-from rlgym.gym import Gym
+from rlgym_sim.gym import Gym
+
 
 class RLLibEnv(MultiAgentEnv):
     def __init__(self, env: Gym):
@@ -35,4 +36,4 @@ class RLLibEnv(MultiAgentEnv):
 
     @override(MultiAgentEnv)
     def action_space_sample(self, agent_ids: list = None) -> MultiAgentDict:
-        return {agent_id:self.action_space.sample() for agent_id in self._agent_ids}
+        return {agent_id: self.action_space.sample() for agent_id in self._agent_ids}

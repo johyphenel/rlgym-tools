@@ -1,8 +1,9 @@
-from rlgym.utils.reward_functions import RewardFunction
+from rlgym_sim.utils.reward_functions import RewardFunction
 
-from rlgym.utils.gamestates import GameState, PlayerData
+from rlgym_sim.utils.gamestates import GameState, PlayerData
 
 from numpy import ndarray
+
 
 class SequentialRewards(RewardFunction):
     """ 
@@ -10,6 +11,7 @@ class SequentialRewards(RewardFunction):
     Example: rewards, step_requirements = [reward1, reward2, reward3, etc], [10_000_000, 20_000_000, 30_000_000, etc]
     my_rewards = SequentialRewards(rewards, step_requirements)   
     """
+
     def __init__(self, rewards: list, steps: list):
         super().__init__()
         self.rewards_list = rewards

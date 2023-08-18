@@ -1,7 +1,7 @@
 import numpy as np
 from pettingzoo import AECEnv
 
-from rlgym.gym import Gym
+from rlgym_sim.gym import Gym
 
 
 class PettingZooEnv(AECEnv):

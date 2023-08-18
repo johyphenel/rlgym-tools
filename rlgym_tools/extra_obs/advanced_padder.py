@@ -1,13 +1,14 @@
-from rlgym.utils.gamestates import PlayerData, GameState, PhysicsObject
-from rlgym.utils.obs_builders import ObsBuilder
+from rlgym_sim.utils.gamestates import PlayerData, GameState, PhysicsObject
+from rlgym_sim.utils.obs_builders import ObsBuilder
 from typing import Any, List
-from rlgym.utils import common_values
+from rlgym_sim.utils import common_values
 import numpy as np
 import math
 
 
 class AdvancedObsPadder(ObsBuilder):
     """adds 0 padding to accommodate differing numbers of agents"""
+
     def __init__(self, team_size=3, expanding=False):
         super().__init__()
         self.team_size = team_size

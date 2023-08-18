@@ -1,6 +1,6 @@
-from rlgym.utils.state_setters import StateSetter
-from rlgym.utils.state_setters import StateWrapper
-from rlgym.utils.math import rand_vec3
+from rlgym_sim.utils.state_setters import StateSetter
+from rlgym_sim.utils.state_setters import StateWrapper
+from rlgym_sim.utils.math import rand_vec3
 import numpy as np
 from numpy import random as rand
 import random
@@ -119,7 +119,7 @@ class GoaliePracticeState(StateSetter):
     def _get_shot_parameters(self, team_turn, aerial_only):
         """
         Function to set a new ball towards a goal
-        
+
         :param team_turn: team who's getting shot at
         :param aerial_only: Boolean indicating whether should shots only be from the air
         """

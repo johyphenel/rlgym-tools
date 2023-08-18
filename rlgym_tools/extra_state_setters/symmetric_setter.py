@@ -1,6 +1,6 @@
-from rlgym.utils.state_setters import StateSetter
-from rlgym.utils.state_setters import StateWrapper
-from rlgym.utils.common_values import BALL_RADIUS, CEILING_Z, BLUE_TEAM
+from rlgym_sim.utils.state_setters import StateSetter
+from rlgym_sim.utils.state_setters import StateWrapper
+from rlgym_sim.utils.common_values import BALL_RADIUS, CEILING_Z, BLUE_TEAM
 import numpy as np
 from numpy import random as rand
 

@@ -7,9 +7,9 @@ import numpy as np
 from carball.analysis.analysis_manager import AnalysisManager
 from carball.controls.controls import ControlsCreator
 
-from rlgym.utils import math
-from rlgym.utils.common_values import ORANGE_TEAM, BLUE_TEAM, BOOST_LOCATIONS
-from rlgym.utils.gamestates import GameState, PhysicsObject, PlayerData
+from rlgym_sim.utils import math
+from rlgym_sim.utils.common_values import ORANGE_TEAM, BLUE_TEAM, BOOST_LOCATIONS
+from rlgym_sim.utils.gamestates import GameState, PhysicsObject, PlayerData
 
 boost_locations = np.array(BOOST_LOCATIONS)  # Need ndarray for speed
 

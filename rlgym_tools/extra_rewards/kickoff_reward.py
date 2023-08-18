@@ -1,7 +1,7 @@
-from rlgym.utils.reward_functions import RewardFunction
-from rlgym.utils.reward_functions.common_rewards.player_ball_rewards import VelocityPlayerToBallReward
+from rlgym_sim.utils.reward_functions import RewardFunction
+from rlgym_sim.utils.reward_functions.common_rewards.player_ball_rewards import VelocityPlayerToBallReward
 
-from rlgym.utils.gamestates import GameState, PlayerData
+from rlgym_sim.utils.gamestates import GameState, PlayerData
 
 from numpy import ndarray
 
@@ -10,6 +10,7 @@ class KickoffReward(RewardFunction):
     """
     a simple reward that encourages driving towards the ball fast while it's in the neutral kickoff position
     """
+
     def __init__(self):
         super().__init__()
         self.vel_dir_reward = VelocityPlayerToBallReward()

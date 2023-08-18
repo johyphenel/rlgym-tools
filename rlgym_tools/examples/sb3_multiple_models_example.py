@@ -1,18 +1,18 @@
 import numpy as np
-from rlgym.envs import Match
-from rlgym.utils.action_parsers import DiscreteAction
-from rlgym.utils.obs_builders import AdvancedObs
-from rlgym.utils.reward_functions import DefaultReward
-from rlgym.utils.reward_functions.common_rewards import VelocityPlayerToBallReward
-from rlgym.utils.state_setters import DefaultState
-from rlgym.utils.terminal_conditions.common_conditions import TimeoutCondition, GoalScoredCondition
+from rlgym_sim.envs import Match
+from rlgym_sim.utils.action_parsers import DiscreteAction
+from rlgym_sim.utils.obs_builders import AdvancedObs
+from rlgym_sim.utils.reward_functions import DefaultReward
+from rlgym_sim.utils.reward_functions.common_rewards import VelocityPlayerToBallReward
+from rlgym_sim.utils.state_setters import DefaultState
+from rlgym_sim.utils.terminal_conditions.common_conditions import TimeoutCondition, GoalScoredCondition
 
-from rlgym_tools.extra_rewards.multi_model_rewards import MultiModelReward
-from rlgym_tools.sb3_utils import SB3MultipleInstanceEnv
+from rlgym_sim_tools.extra_rewards.multi_model_rewards import MultiModelReward
+from rlgym_sim_tools.sb3_utils import SB3MultipleInstanceEnv
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import CheckpointCallback
 
-from rlgym_tools.sb3_utils.sb3_multi_agent_tools import multi_learn
+from rlgym_sim_tools.sb3_utils.sb3_multi_agent_tools import multi_learn
 
 if __name__ == '__main__':
     frame_skip = 8
@@ -32,7 +32,6 @@ if __name__ == '__main__':
     # some simple rewards for example purposes. reward_funcs should be in the same order as the list of models.
     reward_funcs = [VelocityPlayerToBallReward(), DefaultReward(), VelocityPlayerToBallReward(), DefaultReward()]
 
-
     def get_match():
         return Match(
             team_size=2,  # 2v2 for this example because why not
@@ -45,7 +44,6 @@ if __name__ == '__main__':
             state_setter=DefaultState(),
             action_parser=DiscreteAction()
         )
-
 
     env = SB3MultipleInstanceEnv(get_match, 2)  # Start 2 instances
 

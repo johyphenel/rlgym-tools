@@ -1,16 +1,16 @@
 import numpy as np
-from rlgym.envs import Match
-from rlgym.utils.action_parsers import DiscreteAction
+from rlgym_sim.envs import Match
+from rlgym_sim.utils.action_parsers import DiscreteAction
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import CheckpointCallback
 from stable_baselines3.common.vec_env import VecMonitor, VecNormalize, VecCheckNan
 from stable_baselines3.ppo import MlpPolicy
 
-from rlgym.utils.obs_builders import AdvancedObs
-from rlgym.utils.reward_functions.common_rewards import VelocityPlayerToBallReward
-from rlgym.utils.state_setters import DefaultState
-from rlgym.utils.terminal_conditions.common_conditions import TimeoutCondition, GoalScoredCondition
-from rlgym_tools.sb3_utils import SB3MultipleInstanceEnv
+from rlgym_sim.utils.obs_builders import AdvancedObs
+from rlgym_sim.utils.reward_functions.common_rewards import VelocityPlayerToBallReward
+from rlgym_sim.utils.state_setters import DefaultState
+from rlgym_sim.utils.terminal_conditions.common_conditions import TimeoutCondition, GoalScoredCondition
+from rlgym_sim_tools.sb3_utils import SB3MultipleInstanceEnv
 
 if __name__ == '__main__':  # Required for multiprocessing
     frame_skip = 8          # Number of ticks to repeat an action
@@ -19,7 +19,6 @@ if __name__ == '__main__':  # Required for multiprocessing
     fps = 120 / frame_skip
     gamma = np.exp(np.log(0.5) / (fps * half_life_seconds))  # Quick mafs
     print(f"fps={fps}, gamma={gamma})")
-
 
     def get_match():  # Need to use a function so that each instance can call it and produce their own objects
         return Match(

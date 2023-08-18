@@ -3,8 +3,8 @@ from typing import Any
 import gym
 import numpy as np
 from gym.spaces import Discrete
-from rlgym.utils.action_parsers import ActionParser
-from rlgym.utils.gamestates import GameState
+from rlgym_sim.utils.action_parsers import ActionParser
+from rlgym_sim.utils.gamestates import GameState
 
 
 class LookupAction(ActionParser):

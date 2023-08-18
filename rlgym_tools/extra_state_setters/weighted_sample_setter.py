@@ -1,6 +1,6 @@
-from rlgym.utils import RewardFunction
-from rlgym.utils.state_setters import StateSetter
-from rlgym.utils.state_setters import StateWrapper
+from rlgym_sim.utils import RewardFunction
+from rlgym_sim.utils.state_setters import StateSetter
+from rlgym_sim.utils.state_setters import StateWrapper
 from random import choices
 from typing import Sequence, Union, Tuple
 
